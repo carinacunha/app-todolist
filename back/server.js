@@ -1,3 +1,9 @@
-const app = require('./app');
+const app = require('./app'); 
+const connection = require('./src/db/connection');
 
-app.listen(3001, () => console.log('server running on port 3001'));
+const port = 3000; //
+
+app.listen(port, async () => { 
+  console.log(`API todolist está sendo executada na porta ${port}`);
+
+});
