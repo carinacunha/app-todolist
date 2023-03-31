@@ -3,7 +3,7 @@ const taskDB = require('../db/taskDB');
 
 const router = express.Router(); 
 
-router.get('/', async (_req, res) => {
+router.get('/tasks', async (_req, res) => {
   try {
     const [result] = await taskDB.getAll();
     if(result){
