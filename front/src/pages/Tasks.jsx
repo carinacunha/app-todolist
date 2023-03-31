@@ -5,11 +5,10 @@ import Table from '../components/Table';
 export default class Tasks extends Component {
   render() {
     return (
-    <main>
-      <Form />
-      <Table />
-    </main>
-      
+      <div>
+        <Form />
+        <Table />
+      </div>  
     )
   }
 }
