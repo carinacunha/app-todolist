@@ -19,7 +19,7 @@ router.get('/', async (_req, res) => {
   }
 )
 
-router.post('/', async (req, res) => {
+router.post('/tasks', async (req, res) => {
   const task = req.body;
   try {
     const result = await taskDB.insert(task);
@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/task/:id', async (req, res) => {
+router.put('/tasks/:id', async (req, res) => {
   const { id } = req.params;
   const idNumber = parseInt(id);
   const newTask = req.body;
@@ -45,7 +45,7 @@ router.put('/task/:id', async (req, res) => {
   }
 });
 
-router.delete('/task/:id', async (req, res) => {
+router.delete('/tasks/:id', async (req, res) => {
   const { id } = req.params;
   const idNumber = parseInt(id);
   try {

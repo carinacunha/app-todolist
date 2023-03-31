@@ -1,41 +1,49 @@
-import React, {  useContext } from 'react';
+
+import { useContext } from 'react';
 import MainContext from '../context/MainContext';
+import { postData } from '../services/requests';
 
 function Form(){
     const { tasks, setTasks } = useContext(MainContext);
-
+    
     const handleChange = ({ target: { value, name } }) => {
       setTasks((prev) => ({ ...prev, [name]: value }));
     };
 
+    const handleClickAdd = async (e) => {
+      await postData('http://localhost:3000/tasks', tasks)
+    };
+
     return (
       <section className="task-section">
-        <form className="task-form">
+        <form className="task-form"
+          onSubmit={ (event)=>  event.preventDefault() }
+        >
         <p>Cadastre sua tarefa</p>
-          <label for="title">Título:</label>
+          <label>Título:</label>
             <input
               className="title"
-              type="title"
+              type="text"
               name="title"
               id="title"
               onChange={ handleChange }
               
             />
-          <label for="description">Descrição:</label>
+          <label>Descrição:</label>
             <input
               className="description"
-              type="description"
+              type="text"
               name="description"
               id="description"
               onChange={ handleChange }
               
             />
 
-          <label for="date">Data de conclusão:</label>   
+          <label>Data de conclusão:</label>   
             <input
-              className="data-finished"
-              type="data-finished"
-              name="data-finished"
+              className="done-date"
+              name="doneDate"
+              type="text"
               id="date"
               placeholder='AAAA-MM-DD'
               onChange={ handleChange }
@@ -45,17 +53,12 @@ function Form(){
           <div className="task-form-buttons">
             <button
               data-testid="insert-task-btn"
+              onClick={ handleClickAdd }
             >
               Salvar
             </button>
           </div>
-          <table>
-            <thread>
-            <th className="field-title">Título</th>
-            <th className="field-decription">Descrição</th>
-            <th className="field-date">Data de conclusão</th>
-            </thread>
-          </table>
+  
         </form>
     </section>
     )
