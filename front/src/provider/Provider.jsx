@@ -13,6 +13,10 @@ function TaskProvider({ children }) {
 
   const [allTasks, setAllTasks] = useState([]);
 
+  const [idEdit, setIdEdit] = useState(0);
+
+  const [isEditMode, setIsEditMode] = useState(false);
+
   useEffect(() => {
     getData('http://localhost:3000/tasks').then((resp) => {
       setAllTasks(resp);
@@ -22,9 +26,13 @@ function TaskProvider({ children }) {
   const contextValue = useMemo(() => ({
     tasks,
     setTasks,
-    allTasks, 
-    setAllTasks
-  }), [tasks, allTasks]);
+    allTasks,
+    setAllTasks,
+    idEdit,
+    setIdEdit,
+    isEditMode, 
+    setIsEditMode
+  }), [tasks, allTasks, idEdit]);
 
   return (
     <MainContext.Provider value={ contextValue }>
