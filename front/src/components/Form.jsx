@@ -49,6 +49,13 @@ function Form(){
               Salvar
             </button>
           </div>
+          <table>
+            <thread>
+            <th className="field-title">Título</th>
+            <th className="field-decription">Descrição</th>
+            <th className="field-date">Data de conclusão</th>
+            </thread>
+          </table>
         </form>
     </section>
     )
