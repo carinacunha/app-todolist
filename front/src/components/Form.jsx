@@ -1,7 +1,13 @@
-import React, { Component } from 'react'
+import React, {  useContext } from 'react';
+import MainContext from '../context/MainContext';
 
-export default class Form extends Component {
-  render() {
+function Form(){
+    const { tasks, setTasks } = useContext(MainContext);
+
+    const handleChange = ({ target: { value, name } }) => {
+      setTasks((prev) => ({ ...prev, [name]: value }));
+    };
+
     return (
       <section className="task-section">
         <form className="task-form">
@@ -12,6 +18,7 @@ export default class Form extends Component {
               type="title"
               name="title"
               id="title"
+              onChange={ handleChange }
               
             />
           <label for="description">Descrição:</label>
@@ -20,6 +27,7 @@ export default class Form extends Component {
               type="description"
               name="description"
               id="description"
+              onChange={ handleChange }
               
             />
 
@@ -29,6 +37,8 @@ export default class Form extends Component {
               type="data-finished"
               name="data-finished"
               id="date"
+              placeholder='AAAA-MM-DD'
+              onChange={ handleChange }
               
             />
         
@@ -42,5 +52,6 @@ export default class Form extends Component {
         </form>
     </section>
     )
-  }
 }
+
+export default Form;
