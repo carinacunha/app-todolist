@@ -7,6 +7,6 @@
 
         public string? Descricao { get; set; }
 
-        public int status { get; set; }
+        public int Status { get; set; }
     }
 }
