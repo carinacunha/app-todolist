@@ -20,7 +20,7 @@ namespace SistemadeTarefa
 
             builder.Services.AddEntityFrameworkSqlServer()
                 .AddDbContext<SistemaTarefasDBContext>(
-                    options => options.UseSqlServer(builder.Configuration.GetConnectionString("Database"))
+                    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase"))
             );
 
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
