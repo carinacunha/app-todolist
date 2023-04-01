@@ -17,7 +17,7 @@ namespace SistemadeTarefa.Controllers
         public async Task <ActionResult<List<UsuarioModel>>> BuscarTodosUsuarios() 
         {
             List<UsuarioModel> usuarios = await _usuarioRepositorio.BuscarTodosUsuarios();
-            return Ok();
+            return Ok(usuarios);
         }
 
         [HttpGet("{id}")]
