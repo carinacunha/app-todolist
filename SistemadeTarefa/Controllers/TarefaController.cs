@@ -23,7 +23,7 @@ namespace SistemadeTarefa.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<List<TarefaModel>>> BuscarPorId(int id)
+        public async Task<ActionResult<TarefaModel>> BuscarPorId(int id)
         {
             TarefaModel tarefa = await _tarefaRepositorio.BucarPorId(id);
             return Ok(tarefa);
