@@ -24,8 +24,9 @@ namespace SistemadeTarefa
             );
 
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+            builder.Services.AddScoped<TarefaRepositorio, TarefaRepositorio>();
 
-             var app = builder.Build();
+            var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
