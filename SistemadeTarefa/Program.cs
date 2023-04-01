@@ -25,7 +25,7 @@ namespace SistemadeTarefa
 
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
-            var app = builder.Build();
+             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

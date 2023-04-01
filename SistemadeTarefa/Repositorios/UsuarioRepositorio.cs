@@ -1,5 +1,4 @@
-﻿using System.Data.Entity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SistemadeTarefa.Data;
 using SistemadeTarefa.Models;
 using SistemadeTarefa.Repositorios.Interfaces;
