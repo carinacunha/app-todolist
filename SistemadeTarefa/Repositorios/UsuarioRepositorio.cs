@@ -15,7 +15,7 @@ namespace SistemadeTarefa.Repositorios
         }
         public async Task<UsuarioModel> BucarPorId(int id)
         {
-            return await _dbContext.Usuarios.FirstOrDefaultAsync(x => x.Id == "id");
+            return await _dbContext.Usuarios.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<List<UsuarioModel>> BuscarTodosUsuarios()
