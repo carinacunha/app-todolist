@@ -33,6 +33,21 @@ This project was developed using macOS, if you are using a different OS the step
 * Relational database
   * **SQL Server**
          
+## Routes
+
+1️⃣ Task Routes:
+
+* GET /api/Task
+  Responsible for get all task registred in database.
+* GET /api/Task/id
+  Responsible for returning task registered in the database through the ID.
+* POST /api/Task
+Responsible for registering the task in the database and returning it.
+* UPDATE /api/Task/id
+  Responsible for updating the task in the database and returning it.
+* DELETE /api/Task/id
+  Responsible for deleting the task in the database.
+
 
 ## SetUp
 
