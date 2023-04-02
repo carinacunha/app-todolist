@@ -1,9 +1,12 @@
 using Microsoft.EntityFrameworkCore;
-using SistemadeTarefa.Data;
-using SistemadeTarefa.Repositorios;
-using SistemadeTarefa.Repositorios.Interfaces;
+using TaskSystem.Data;
+using TaskSystem.Repository;
+using TaskSystem.Repository.Interfaces;
+using UserSystem.Repository;
+using UserSystem.Repository.Interfaces;
 
-namespace SistemadeTarefa
+
+namespace TaskSystem
 {
     public class Program
     {
@@ -19,12 +22,12 @@ namespace SistemadeTarefa
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddEntityFrameworkSqlServer()
-                .AddDbContext<SistemaTarefasDBContext>(
+                .AddDbContext<DBContext>(
                     options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase"))
             );
 
-            builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
-            builder.Services.AddScoped<ITarefaRepositorio, TarefaRepositorio>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 
             var app = builder.Build();
 

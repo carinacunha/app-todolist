@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SistemadeTarefa.Data;
+using TaskSystem.Data;
 
 #nullable disable
 
-namespace SistemadeTarefa.Migrations
+namespace ToDoListApi.Migrations
 {
-    [DbContext(typeof(SistemaTarefasDBContext))]
-    [Migration("20230402121050_UpdateNameCollum")]
-    partial class UpdateNameCollum
+    [DbContext(typeof(DBContext))]
+    [Migration("20230402153322_IntialDB")]
+    partial class IntialDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,30 +24,7 @@ namespace SistemadeTarefa.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("SistemadeTarefa.Models.UsuarioModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(155)
-                        .HasColumnType("nvarchar(155)");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Usuarios");
-                });
-
-            modelBuilder.Entity("SistemadeTarefas.Models.TarefaModel", b =>
+            modelBuilder.Entity("TaskSystem.Models.TaskModel", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -70,7 +47,30 @@ namespace SistemadeTarefa.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Tarefas");
+                    b.ToTable("Tasks");
+                });
+
+            modelBuilder.Entity("UserSystem.Models.UserModel", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasMaxLength(155)
+                        .HasColumnType("nvarchar(155)");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
