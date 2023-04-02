@@ -11,7 +11,7 @@ namespace TaskSystem.Controllers
     {
         private readonly IUserRepository _userRepository;
         public UserController(IUserRepository userRepository) {
-            userRepository = userRepository;
+            _userRepository = userRepository;
         }
         [HttpGet]
         public async Task <ActionResult<List<UserModel>>> GetAll() 
