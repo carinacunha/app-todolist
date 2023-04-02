@@ -21,10 +21,10 @@ namespace TaskSystem
             builder.Services.AddSwaggerGen();
 
             //services cors
-            //builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
-            //{
-            //    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
-            //}));
+            builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+            {
+               builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+            }));
 
             builder.Services.AddEntityFrameworkSqlServer()
                 .AddDbContext<DBContext>(
@@ -44,7 +44,7 @@ namespace TaskSystem
             }
 
             //app cors
-            //app.UseCors("corsapp");
+            app.UseCors("corsapp");
 
             app.UseHttpsRedirection();
 
