@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using TaskSystem.Models;
 using TaskSystem.Repository.Interfaces;
 
-
 namespace TaskSystem.Controllers
 {
     [Route("api/[controller]")]
