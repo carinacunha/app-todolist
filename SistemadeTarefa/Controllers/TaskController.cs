@@ -15,9 +15,13 @@ namespace TaskSystem.Controllers
         }
         [HttpGet]
         public async Task <ActionResult<List<TaskModel>>> GetAll() 
-        {
-            List<TaskModel> tasks = await _taskRepository.FindAllTasks();
-            return Ok(tasks);
+        {   
+            List<TaskModel> taskResults = await _taskRepository.FindAllTasks();
+            if (taskResults == null)
+            {
+                throw new Exception("Não existe tarefa cadastrada");
+            }
+            return Ok(taskResults);
         }
 
         [HttpGet("{id}")]

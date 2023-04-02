@@ -41,7 +41,6 @@ namespace TaskSystem.Repository
             taskById.title = task.title;
             taskById.description = task.description;
             taskById.doneDate = task.doneDate;
-            //tarefaPorId.UsuarioId = tarefa.UsuarioId;
 
             _dbContext.Tasks.Update(taskById);
             await _dbContext.SaveChangesAsync();
