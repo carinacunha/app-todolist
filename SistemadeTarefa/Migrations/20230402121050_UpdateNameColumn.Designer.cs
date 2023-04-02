@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SistemadeTarefa.Data;
 
@@ -11,9 +12,10 @@ using SistemadeTarefa.Data;
 namespace SistemadeTarefa.Migrations
 {
     [DbContext(typeof(SistemaTarefasDBContext))]
-    partial class SistemaTarefasDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230402121050_UpdateNameCollum")]
+    partial class UpdateNameCollum
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

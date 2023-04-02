@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SistemadeTarefa.Data;
 
@@ -11,9 +12,10 @@ using SistemadeTarefa.Data;
 namespace SistemadeTarefa.Migrations
 {
     [DbContext(typeof(SistemaTarefasDBContext))]
-    partial class SistemaTarefasDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230402120137_ToDoList")]
+    partial class ToDoList
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,26 +49,26 @@ namespace SistemadeTarefa.Migrations
 
             modelBuilder.Entity("SistemadeTarefas.Models.TarefaModel", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("description")
+                    b.Property<string>("Descricao")
                         .HasMaxLength(155)
                         .HasColumnType("nvarchar(155)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<DateTime?>("doneDate")
                         .IsRequired()
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("title")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Tarefas");
                 });

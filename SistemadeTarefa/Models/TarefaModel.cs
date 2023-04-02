@@ -5,12 +5,12 @@ namespace SistemadeTarefas.Models
 {
     public class TarefaModel
     {
-        public int Id { get; set; }
-        public string? Nome { get; set; }
+        public int id { get; set; }
+        public string? title { get; set; }
 
-        public string? Descricao { get; set; }
+        public string? description { get; set; }
 
-        public StatusTarefa Status { get; set; }
+        public DateTime? doneDate { get; set; }
 
         //public int? UsuarioId { get; set; }
 

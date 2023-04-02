@@ -14,7 +14,7 @@ namespace SistemadeTarefa.Repositorios
         }
         public async Task<TarefaModel> BucarPorId(int id)
         {
-            return await _dbContext.Tarefas.FirstOrDefaultAsync(x => x.Id == id);
+            return await _dbContext.Tarefas.FirstOrDefaultAsync(x => x.id == id);
         }
 
         public async Task<List<TarefaModel>> BuscarTodasTarefas()
@@ -37,9 +37,9 @@ namespace SistemadeTarefa.Repositorios
             {
                 throw new Exception($"Tarefa para o ID: {id} não foi encontrado no banco de dados.");
             }
-            tarefaPorId.Nome = tarefa.Nome;
-            tarefaPorId.Descricao = tarefa.Descricao;
-            tarefaPorId.Status = tarefa.Status;
+            tarefaPorId.title = tarefa.title;
+            tarefaPorId.description = tarefa.description;
+            tarefaPorId.doneDate = tarefa.doneDate;
             //tarefaPorId.UsuarioId = tarefa.UsuarioId;
 
             _dbContext.Tarefas.Update(tarefaPorId);
