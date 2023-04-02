@@ -13,9 +13,9 @@ namespace SistemadeTarefa.Data.Map
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(255);
             builder.Property(x => x.Descricao).HasMaxLength(155);
             builder.Property(x => x.Status).IsRequired();
-            builder.Property(x => x.UsuarioId);
+            //builder.Property(x => x.UsuarioId);
 
-            builder.HasOne(x => x.Usuario);
+            //builder.HasOne(x => x.Usuario);
 
         }
     }

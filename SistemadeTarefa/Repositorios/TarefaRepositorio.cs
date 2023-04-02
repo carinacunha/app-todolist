@@ -40,7 +40,7 @@ namespace SistemadeTarefa.Repositorios
             tarefaPorId.Nome = tarefa.Nome;
             tarefaPorId.Descricao = tarefa.Descricao;
             tarefaPorId.Status = tarefa.Status;
-            tarefaPorId.UsuarioId = tarefa.UsuarioId;
+            //tarefaPorId.UsuarioId = tarefa.UsuarioId;
 
             _dbContext.Tarefas.Update(tarefaPorId);
             await _dbContext.SaveChangesAsync();
@@ -53,7 +53,7 @@ namespace SistemadeTarefa.Repositorios
             TarefaModel tarefaPorId = await BucarPorId(id);
             if (tarefaPorId == null)
             {
-                throw new Exception($"Usuário para o ID: {id} não foi encontrado no banco de dados.");
+                throw new Exception($"Tarefa para o ID: {id} não foi encontrado no banco de dados.");
             }
 
             _dbContext.Tarefas.Remove(tarefaPorId);

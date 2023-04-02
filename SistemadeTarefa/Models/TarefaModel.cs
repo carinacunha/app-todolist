@@ -12,8 +12,8 @@ namespace SistemadeTarefas.Models
 
         public StatusTarefa Status { get; set; }
 
-        public int? UsuarioId { get; set; }
+        //public int? UsuarioId { get; set; }
 
-        public virtual UsuarioModel? Usuario { get; set; }
+        //public virtual UsuarioModel? Usuario { get; set; }
     }
 }
