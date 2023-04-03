@@ -42,11 +42,16 @@ function Form(){
 
     return (
       <section className="task-section">
+        <img
+          className="logo-img"
+          src={require('../logo.png')}
+          alt="not found"
+        />
+        <p className="subtitle">Cadastre sua tarefa</p>
         <form className="task-form"
           onSubmit={ (event)=>  event.preventDefault() }
         >
-        <p>Cadastre sua tarefa</p>
-          <label>Título:</label>
+          <label>Título</label>
             <input
               className="title"
               type="text"
@@ -56,7 +61,7 @@ function Form(){
               onChange={ handleChange }
               
             />
-          <label>Descrição:</label>
+          <label>Descrição</label>
             <input
               className="description"
               type="text"
@@ -67,7 +72,7 @@ function Form(){
               
             />
 
-          <label>Data de conclusão:</label>   
+          <label>Data de conclusão</label>   
             <input
               className="done-date"
               name="doneDate"
@@ -82,14 +87,14 @@ function Form(){
             {
               isEditMode ? (
                 <button
-                data-testid="insert-task-btn"
+                className="insert-task-btn"
                 onClick={ handleClickUpdate }
               >
                 Salvar edição
               </button>
               ) :(
                 <button
-                data-testid="insert-task-btn"
+                className="insert-task-btn"
                 onClick={ handleClickAdd }
               >
                 Salvar
