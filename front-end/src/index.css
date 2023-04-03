@@ -9,8 +9,9 @@ html{
   /* porcentagem do tamanhox*/
   font-size: 72.5%;
 }
-body {
-  background: linear-gradient(0deg, #f77062 0%, #A62A6C 100%);
+
+body{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .content{
@@ -22,12 +23,12 @@ justify-content: center;
 height: 200vh;
 width: 100%;
 align-items: center;
-background: linear-gradient(0deg, #f77062 0%, #A62A6C 100%);
-/* background-color: #046380; */
+/* background: linear-gradient(0deg, #f77062 0%, #A62A6C 100%); */
+background-color: #F9EFE5;
 font-family: 'Open Sans', sans-serif;
 }
 
-img{
+.logo-img{
   width: 25rem;
   margin-left: 70rem;
   margin-top: 6.3rem;
@@ -46,7 +47,8 @@ form{
   border-radius: 1.5rem;
   border-radius: 1.5rem;
   margin-left: 23rem;
-  margin-bottom: 3rem;   
+  margin-bottom: 3rem;
+  background-color: #ee7717c1;   
 }
 
 .main-text{
@@ -70,10 +72,21 @@ label{
   font-size: 1.6rem;
   padding-bottom: 0.2rem;
   text-align: left;
-  color:#434C5E;
+  color:#ECEFF4;
   font-weight: bold;
   margin-top: 1.5rem;
   margin-bottom: 0.2rem;
+}
+
+.img-task{
+  width: 25%;
+  height: 20%;
+  
+}
+
+.table-img{
+  display: flex;
+  flex-direction: row;
 }
 
 table{
@@ -84,7 +97,7 @@ table{
   width: 50vw;
   margin: 25rem;
   margin-top: 4rem;
-  margin-left: 37rem;
+  margin-left: 20rem;
   border-radius: 1.5rem;
   border-radius: 1.5rem;
   padding-left: 3rem;
@@ -132,8 +145,8 @@ button {
   align-items: center;
   border-radius: 1.5rem;
   border:none;
-  background: linear-gradient(0deg, #f77062 0%, #FA58B6 100%);
-  font-family: 'Open Sans', sans-serif;
+  background:#ee7717c1;
+  font-weight: bolder;
   font-display: fallback;
   font-size: 1.5rem;
   color: white;
@@ -146,15 +159,17 @@ button {
   align-items: center;
   border-radius: 1.5rem;
   border:none;
-  background: linear-gradient(0deg, #f77062 0%, #FA58B6 100%);
-  font-family: 'Open Sans', sans-serif;
+  background: #ECEFF4;
   font-display: fallback;
   font-size: 1.5rem;
-  color: white;
+  color: #f77062;
+  background-color: #F9EFE5;
+  font-weight: 900;
 }
 
 button:hover{
-  background: #7A0BC0;
+  background: #f79662f5;
+  color: white;
   transform: scale(1.2)
 }
 

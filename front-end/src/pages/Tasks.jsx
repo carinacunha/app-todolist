@@ -5,10 +5,17 @@ import Table from '../components/Table';
 export default class Tasks extends Component {
   render() {
     return (
-      <div className="content">
+      <section className="content">
         <Form />
-        <Table />
-      </div>  
+        <div className="table-img">
+          <Table />
+          <img
+          className="img-task"
+          src={require('../task.png')}
+          alt="not found"
+        />
+        </div>
+      </section>  
     )
   }
 }
