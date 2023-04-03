@@ -47,7 +47,6 @@ function Form(){
           src={require('../logo.png')}
           alt="not found"
         />
-        <p className="subtitle">Cadastre sua tarefa</p>
         <form className="task-form"
           onSubmit={ (event)=>  event.preventDefault() }
         >

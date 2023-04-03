@@ -23,7 +23,6 @@ justify-content: center;
 height: 200vh;
 width: 100%;
 align-items: center;
-/* background: linear-gradient(0deg, #f77062 0%, #A62A6C 100%); */
 background-color: #F9EFE5;
 font-family: 'Open Sans', sans-serif;
 }
@@ -32,7 +31,7 @@ font-family: 'Open Sans', sans-serif;
   width: 25rem;
   margin-left: 70rem;
   margin-top: 6.3rem;
-  margin-bottom: 6.3rem;
+  margin-bottom: 8.3rem;
 }
 
 form{
@@ -49,23 +48,6 @@ form{
   margin-left: 23rem;
   margin-bottom: 3rem;
   background-color: #ee7717c1;   
-}
-
-.main-text{
-  font-weight: 400;
-  font-size: 2.2rem;
-  text-align: center;
-  padding-bottom: 1.5rem;
-}
-
-.subtitle{
-  font-size: 2.3rem;
-  font-weight: bold;
-  padding-top:1.5rem;
-  text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color:white;
-  padding-bottom: 1.5rem;
 }
 
 label{
@@ -114,6 +96,8 @@ th{
   flex-direction: row;
   align-content: space-between;
   font-size: 1.8rem;
+  color: #f77062;
+  font-weight: bold;
 }
 
 td{
@@ -147,7 +131,6 @@ button {
   border:none;
   background:#ee7717c1;
   font-weight: bolder;
-  font-display: fallback;
   font-size: 1.5rem;
   color: white;
 }
@@ -163,7 +146,6 @@ button {
   font-display: fallback;
   font-size: 1.5rem;
   color: #f77062;
-  background-color: #F9EFE5;
   font-weight: 900;
 }
 
